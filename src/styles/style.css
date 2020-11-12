@@ -1,0 +1,25 @@
+@import "~normalize.css";
+@import "minecraft.css";
+
+body {
+    font-family: 'Minecraft Title Cyrillic';
+}
+
+.container {
+    padding-top: 2rem;
+    max-width: 1000px;
+    margin: 0 auto;
+
+
+}
+
+.back {
+    background-image: url("../assets/potato.png");
+    background-size: cover;
+    width: 500px;
+    height: 510px;
+}
+
+h1 {
+    text-align: center;
+}

@@ -1,0 +1,7 @@
+@mixin bc {
+    background-color: aqua;
+}
+
+.backcolor {
+    @include bc;
+}
