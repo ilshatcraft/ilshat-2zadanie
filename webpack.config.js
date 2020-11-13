@@ -114,7 +114,7 @@ module.exports={
                 use:['csv-loader']
             },
             {
-                test: /\.m?js$/,
+                test: /\.js$/,
                 exclude: /node_modules/,
                 use: {
                   loader: 'babel-loader',
