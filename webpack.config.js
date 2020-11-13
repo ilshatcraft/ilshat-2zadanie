@@ -42,12 +42,16 @@ reloadAll:true
         return loaders
     }
 
+    const babelOpt=()=>{
+        return 
+    }
+
 console.log('IS DEV :',isDev)
 module.exports={
     context: path.resolve(__dirname, 'src'),
     mode: 'production',
     entry: {
-       main: './index.js',
+       main: ['@babel/polyfill','./index.js'],
    analytics: './analytics.js',
  },
   output:{
@@ -122,7 +126,18 @@ module.exports={
                     presets: ['@babel/preset-env']
                   }
                 }
-              }
+              },
+              {
+                  test: /\.ts$/,
+                  exclude: /node_modules/,
+                  use: {
+                    loader: 'babel-loader',
+                    options: {
+                      presets: ['@babel/preset-env',
+                    '@babel/preset-typescript']
+                    }
+                  }
+                }
         ]
     }
 }

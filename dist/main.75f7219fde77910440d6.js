@@ -193,7 +193,8 @@ eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extr
 /******/ 		};
 /******/ 		
 /******/ 		var deferredModules = [
-/******/ 			["./index.js","vendors-node_modules_jquery_dist_jquery_js"]
+/******/ 			["../node_modules/@babel/polyfill/lib/index.js","vendors-node_modules_jquery_dist_jquery_js","vendors-node_modules_babel_polyfill_lib_index_js"],
+/******/ 			["./index.js","vendors-node_modules_jquery_dist_jquery_js","vendors-node_modules_babel_polyfill_lib_index_js"]
 /******/ 		];
 /******/ 		// no chunk on demand loading
 /******/ 		
