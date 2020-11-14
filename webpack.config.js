@@ -42,8 +42,18 @@ reloadAll:true
         return loaders
     }
 
-    const babelOpt=()=>{
-        return 
+    const babelOpt= preset =>{
+        const opts={ 
+            presets: ['@babel/preset-env',
+          ],
+          plugins:[]
+          }
+          if (preset){
+              opts.presets.push(preset)
+            }
+        return opts
+
+        
     }
 
 console.log('IS DEV :',isDev)
@@ -122,9 +132,7 @@ module.exports={
                 exclude: /node_modules/,
                 use: {
                   loader: 'babel-loader',
-                  options: {
-                    presets: ['@babel/preset-env']
-                  }
+                  options: babelOpt(),
                 }
               },
               {
@@ -132,12 +140,17 @@ module.exports={
                   exclude: /node_modules/,
                   use: {
                     loader: 'babel-loader',
-                    options: {
-                      presets: ['@babel/preset-env',
-                    '@babel/preset-typescript']
+                    options: babelOpt('@babel/preset-typescript'),
+                  }
+                },
+                {
+                    test: /\.jsx$/,
+                    exclude: /node_modules/,
+                    use: {
+                      loader: 'babel-loader',
+                      options: babelOpt('@babel/preset-react'),
                     }
                   }
-                }
         ]
     }
 }
